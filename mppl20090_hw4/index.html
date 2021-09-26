@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-16x16.png">
+    <title>Φόρμα Επικοινωνίας</title>
+</head>
+<body>
+    <p>Επικοινωνήστε με τον/την ???</p>
+    <p>* Οι αστερίσκοι δηλώνουν υποχρεωτικά πεδία</p>
+        <form id="contactForm" method="post" action="insertUser.php" onsubmit="return checkAllFields();">
+                <fieldset>
+                    <legend>
+                        Θέμα μηνύματος *
+                    </legend>
+                    <div class="fieldtitle">Παρακαλούμε επιλέξτε θέμα</div>
+                    <table>
+                        <tr>
+                            <td>
+                                Το μήνυμα σας αφορά
+                            </td>
+                            <td>
+                                <select id="subject" name="subject">
+                                    <option value="" disabled selected>
+                                        -----------Επιλέξτε-----------
+                                    </option>
+                                    <option>
+                                        Προσωπικά σχόλια
+                                    </option>
+                                    <option>
+                                        Σχόλια για το έργο
+                                    </option>
+                                    <option>
+                                        Άλλο
+                                    </option>
+                                </select>
+                                <div class="hidden" id="subjectMessage">Παρακάλω εισάγετε δεδομένα ξανά</div>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <fieldset>
+                    <legend>
+                        Το μήνυμά σας
+                    </legend>
+                         <div class="fieldtitle">Παρακαλούμε εισάγετε το μήνυμά σας</div>
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="name">
+                                    Όνομα *
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text" name="name" id="name">
+                                <div class="hidden" id="nameMessage">Παρακάλω εισάγετε δεδομένα ξανά</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="surname">
+                                    Επώνυμο *
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text" name="surname" id="surname">
+                                <div class="hidden" id="surnameMessage">Παρακάλω εισάγετε δεδομένα ξανά</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="sex">
+                                    Φύλο *
+                                </label>
+                            </td>
+                            <td>
+                                <input type="radio" name="sex" id="sex1" value="Κα">Κα
+                                <input type="radio" name="sex" id="sex2" value="Κος">Κος
+                                <div class="hidden" id="sexMessage">Παρακάλω εισάγετε δεδομένα ξανά</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="phone">
+                                Τηλέφωνο *
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text" name="phone" id="phone">
+                                <div class="hidden" id="phoneMessage">Παρακάλω εισάγετε δεδομένα ξανά</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="postc">
+                                    Ταχυδρομικός Κωδικός *
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text" name="postc" id="postc">
+                                <div class="hidden" id="postcMessage">Παρακάλω εισάγετε δεδομένα ξανά</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="addr">
+                                    Διεύθυνση *
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text" name="addr" id="addr">
+                                <div class="hidden" id="addrMessage">Παρακάλω εισάγετε δεδομένα ξανά</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="city">
+                                    Πόλη *
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text" name="city" id="city">
+                                <div class="hidden" id="cityMessage">Παρακάλω εισάγετε δεδομένα ξανά</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="district">
+                                    Νομός *
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text" name="district" id="district">
+                                <div class="hidden" id="districtMessage">Παρακάλω εισάγετε δεδομένα ξανά</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="country">
+                                    Χώρα *
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text" name="country" id="country">
+                                <div class="hidden" id="countryMessage">Παρακάλω εισάγετε δεδομένα ξανά</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="e_mail">
+                                    Email *
+                                </label>
+                            </td>
+                            <td>
+                                <input type="text" name="e_mail" id="email">
+                                <div class="hidden" id="emailMessage">Παρακάλω εισάγετε δεδομένα ξανά</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="message">
+                                    Το μήνυμά σας *
+                                </label>
+                            </td>
+                            <td>
+                                <textarea type="text" name="message" id="message"></textarea>
+                                <div class="hidden" id="messageMessage">Παρακάλω εισάγετε δεδομένα ξανά</div>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+            <div class="formbuttons">
+
+                <input id="submit" type="submit" value="Αποστολή μηνύματος">
+                
+                <input id="cancel" type="reset" value="Ακύρωση">
+            </div>
+        </form>
+        <form method="post" action="findme.php">
+            <div class ="searchfield">
+                <input type="text" name="e_mail" id="searchinput">
+                <input id="search_button" type="submit" value="Αναζήτηση στη Βάση μέσω email">
+            </div>
+        </form>
+    <script src="index.js"></script>
+</body>
+</html>
